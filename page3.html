@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+        <title>choix de réponse</title>
+    </head>
+    <body>
+
+
+<div id="reponses">
+<div id="rep1">
+	<p>Bonjour Kader,</p>
+	<p>Merci de nous avoir contacté de nous proposer une de vos oeuvres. Nous savons que vous réalisez une exposition au Musée d'Art Contemporain de Lyon, pourquoi ne pas profiter de l'occasion pour éndre cette exposition jusqu'à Grenoble? </p>
+	<p>Nous sommes à l'écoute de toutes vos propositions.</p>
+	<p>Cordialement,</p>
+	<p class="name"></p>
+	<a href="inter.html">Répondre</a>
+</div>
+<div id="rep2">
+	<p>Bonjour Kader,</p>
+	<p>Nous sommes tout à fait disposés à en discuter. </p>
+	<p>Que pourriez-vous nous proposer? Pensez-vous déjà à des thèmes précis? Nous pourrions mettre à votre disposition notre grand espace de la RUE.</p>
+	<p>Nous vous remercions de nous avoir contacté</p>
+	<p>Cordialement,</p>
+	<p class="name"></p>
+	<a href="inter.html">Répondre</a>
+</div>
+</div>
+
+			
+			
+<script>
+		//récuperation du nom
+		function $_GET(param) {
+			var vars = {};
+			window.location.href.replace( location.hash, '' ).replace( 
+				/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+				function( m, key, value ) { // callback
+					vars[key] = value !== undefined ? value : '';
+				}
+			);
+
+			if ( param ) {
+				return vars[param] ? vars[param] : null;	
+			}
+			return vars;
+		}
+
+		var name = $_GET('name');
+		var x = document.getElementById("reponses");
+		var y = x.getElementsByClassName("name");
+		var i;
+		for (i = 0; i < y.length; i++) {
+			y[i].innerHTML = name;
+		}
+</script>
+			
+
+		
+
+        <script type="text/javascript" src="js/index.js"></script>
+		
+
+		
+    </body>
+</html>

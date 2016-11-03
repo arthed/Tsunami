@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <title>page4</title>
+    </head>
+    <body>
+	<script>
+	
+
+
+		
+
+		//récuperation du nom
+		function $_GET(param) {
+			var vars = {};
+			window.location.href.replace( location.hash, '' ).replace( 
+				/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+				function( m, key, value ) { // callback
+					vars[key] = value !== undefined ? value : '';
+				}
+			);
+
+			if ( param ) {
+				return vars[param] ? vars[param] : null;	
+			}
+			return vars;
+		}
+
+		var name = $_GET('name');
+
+		
+
+		
+		
+
+		
+
+
+</script>
+
+
+
+
+
+
+<!-- on prépare l'élément qui va recevoir l'effet -->
+<div id="ecrire"><h1>Cher Arthur,</h1>
+
+<p>Merci de votre réponse! </p>
+
+<p>J’ai notamment eu l’idée de construire une oeuvre prenant l’aspect d’un couloir de 70m de long et 2,50 de hauteur recouvert de carrelage blanc.</p>
+<p>Tous les deux mètres, seront fixés des égouttoirs de douche à 1,50 m de hauteur. Des machettes seront accrochées au mur et activées en mouvement rotatif par des moteurs...</p>
+
+<p>Vu l’espace disponible dans le Magasin, j’ai un deuxième projet plus monumental à vous proposer, mais je crains que nous n’ayons les moyens de le réaliser…</p>
+<p>Le temps me faisant défaut ( je pars dans 4 heures ) je vous invite à mettre les lunettes cardboard et le casque audio pour comprendre l’essentiel de mes inspirations pour cette oeuvre, que j’ai décidé d’appeler Tsunami. </p>
+<br />
+<p>Je reste à votre entière disposition pour toutes informations complémentaires…</p>
+<p>Bien à vous,</p>
+<p>Kader</p>
+</div>
+
+
+
+<div id="col-images">
+	<ul>
+		<li><img src="img/kader.jpg" alt="Kader"></li>
+		<li><img src="img/congo.jpg" alt="Kader"></li>
+		<li><img src="img/oeuvre.jpg" alt="Kader"></li>
+	</ul>
+</div>
+<a href="page5.html">J'ai compris</a>
+<script
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+<script>
+$.fn.machineEcrire = function(option) {
+ 
+  // on prépare le plugin
+  function caract (element, text, content) {
+ 
+    // si le texte a une taille supp à 0, c'est qu'il reste encore des caractères
+    if (text.length > 0) {
+ 
+      var next = text.substr(0,1); // on récupère le caractère
+ 
+      // on enlève le caractère pour garder uniquement le reste
+      text = text.substr(1);
+ 
+      // on ajoute les caractères 1 par 1
+      $(element).html(content+next);
+ 
+      // on répète la fonction après le delai
+      setTimeout(function(){
+        caract(element, text, content+next);
+      }, option['delai']);
+    }
+  }
+ 
+  // on configure l'élément par défaut
+	option = option || { 'delai': 50 };
+  // on exécute pour la 1er fois la fonction
+	caract(this, $(this).html(), '');
+ 
+}
+$("#ecrire").machineEcrire({ 'delai' : 50 });
+</script>
+    </body>
+</html>

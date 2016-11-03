@@ -13,15 +13,19 @@
 
         <title>Tsunami - entrez votre nom</title>
     </head>
-    <body onclick=>
+    <body>
 
 
 
 
 			
 			<div id="bloc1">
-			<form>
-				<input type="text" name="name" id="name" placeholder="Tapez votre nom">
+			<form method="get" action="page2.html?name=?">
+			<ul>
+				<li><input type="text" name="name" id="name" placeholder="Tapez votre nom" onkeyup="valide(this.value);"></li>
+				<li><div id="imgvalide"><input type="submit" class="bad" value="" disabled></div></li>
+			</ul>			
+				
 			</form>
 			</div>
 
@@ -32,7 +36,26 @@
         <script type="text/javascript" src="js/index.js"></script>
 		
 		<script>
-			document.getElementById("name").innerHTML;
+			//recuperation du nom
+			var nom = document.getElementById("name").value;
+			//validation
+			  function valide(carac)
+        {       
+			var nbr = carac.length;
+			document.getElementById("imgvalide" ).innerHTML = nbr;
+
+                  if(nbr >2)
+                {
+						document.getElementById("imgvalide" ).innerHTML = '<input type="submit" class="good" value="">';
+
+				}
+                else
+                {
+						document.getElementById("imgvalide" ).innerHTML = '<input type="submit" class="bad" value="" disabled>';
+				}
+        }
+		
 		</script>
+		
     </body>
 </html>
