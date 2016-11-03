@@ -54,7 +54,7 @@
 
 
 <!-- on prépare l'élément qui va recevoir l'effet -->
-<div id="ecrire"><h1>Cher Arthur,</h1>
+<div id="ecrire"><h1 id="titre"></h1>
 
 <p>Merci de votre réponse! </p>
 
@@ -73,13 +73,28 @@
 
 <div id="col-images">
 	<ul>
-		<li><img src="img/kader.jpg" alt="Kader"></li>
-		<li><img src="img/congo.jpg" alt="Kader"></li>
-		<li><img src="img/oeuvre.jpg" alt="Kader"></li>
+		<li id="img1"></li>
+		<li id="img2"></li>
+		<li id="img3"></li>
 	</ul>
 </div>
 <a href="page5.html">J'ai compris</a>
-<script
+
+
+<script>
+//tps d'apparition des images à régler
+setTimeout(function(){ 
+	document.getElementById('img1').innerHTML = "<img src='img/kader.jpg' alt='Kader'>";
+	}, 3000);
+	
+setTimeout(function(){ 
+	document.getElementById('img2').innerHTML = "<img src='img/congo.jpg' alt='Kader'>";
+	}, 15000);
+
+setTimeout(function(){ 
+	document.getElementById('img3').innerHTML = "<img src='img/oeuvre.jpg' alt='Kader'>";
+	}, 30000);
+</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
 <script>
 $.fn.machineEcrire = function(option) {
@@ -111,6 +126,7 @@ $.fn.machineEcrire = function(option) {
 	caract(this, $(this).html(), '');
  
 }
+document.getElementById('titre').innerHTML = "Bonjour "+name+" !";
 $("#ecrire").machineEcrire({ 'delai' : 50 });
 </script>
     </body>

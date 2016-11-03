@@ -16,18 +16,7 @@
     <body>
 
 <script>
-function display()
-{
-	//machine à écrire
-	if (cpt >= txt.length) return;
-	cpt++;
-	var elt=document.getElementById("txt");
-	var car = (txt.charCodeAt(cpt)==10) ? '<br />' : txt.substr(cpt,1);
-	
-	elt.innerHTML=elt.innerHTML+car;	
-	
-	setTimeout("display()",80+Math.round(Math.random()*20));	
-}
+
 
 		//récupération du nom
 		function $_GET(param) {
@@ -46,36 +35,87 @@ function display()
 		}
 
 		var name = $_GET('name');
-
-		//Texte
-
-		var txt = new String("<h1>Bonjour "+name+",</h1> Je m'appelle Kader Attia, je suis un artiste d'art contemporain et j'aimerais beaucoup pouvoir exposer une de mes oeuvres au Magasin. J'ai pour habitude de construire mes installations avec divers matériaux. J'ai pour sources d'inspirations de grandes causes qui m'inspirent et je travaille souvent sur des sujets relatifs aux domaines géo-politiques, climatiques, etc. Récemment, j'ai fait un voyage au Congo. J'y ai beaucoup dessiné et imaginé de nouvelles installations qui pourraient vous plaire.N'hésitez pas à me contacter si vous voulez en discuter! Bien cordialement, Kader Attia Merci et à bientot ! Kader Attia");
-		var cpt =-1;
-		setTimeout("display()",100);
-
-
-
 </script>
 
 
 
 
-<div id="txt"></div>
+<div id="ecrire">
+<h1 id="titre"></h1>
+<p>Je m’appeller Kader Attia, je suis un artiste d’art contemporain et j’aimerais beaucoup pouvoir exposer une de mes oeuvres au Magasin. J’ai pour habitude de construire mes installations avec divers matériaux. J’ai pour sources d’inspirations de grandes causes qui m’inspirent et je travaille souvent sur des sujets relatifs aux domaines géo-politiques, climatiques, etc. Récemment, j’ai fait un voyage au Congo. J’y ai beaucoup dessiné et imaginé de nouvelles installations qui pourraient vous plaire.</p>
+<p>N’hésitez pas à me contacter si vous voulez en discuter!</p>
+<p>Bien cordialement,</p>
+<p>Kader Attia</p>
+</div>
+
 <div id="col-images">
 	<ul>
-		<li><img src="img/kader.jpg" alt="Kader"></li>
-		<li><img src="img/congo.jpg" alt="Kader"></li>
-		<li><img src="img/oeuvre.jpg" alt="Kader"></li>
+		<li id="img1"></li>
+		<li id="img2"></li>
+		<li id="img3"></li>
 	</ul>
 </div>
 <button onclick="goto();">Répondre</button>
 
+
+<script>
+//tps d'apparition des images à régler
+setTimeout(function(){ 
+	document.getElementById('img1').innerHTML = "<img src='img/kader.jpg' alt='Kader'>";
+	}, 3000);
+	
+setTimeout(function(){ 
+	document.getElementById('img2').innerHTML = "<img src='img/congo.jpg' alt='Kader'>";
+	}, 15000);
+
+setTimeout(function(){ 
+	document.getElementById('img3').innerHTML = "<img src='img/oeuvre.jpg' alt='Kader'>";
+	}, 30000);
+</script>
+
+
+
 		<script>
 		function goto(){
-			document.location.href="page3.html?name='"+name+"'";
+			document.location.href="page3.html?name="+name;
 		}
+		
 		</script>
-			
+		
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+<script>
+$.fn.machineEcrire = function(option) {
+ 
+  // on prépare le plugin
+  function caract (element, text, content) {
+ 
+    // si le texte a une taille supp à 0, c'est qu'il reste encore des caractères
+    if (text.length > 0) {
+ 
+      var next = text.substr(0,1); // on récupère le caractère
+ 
+      // on enlève le caractère pour garder uniquement le reste
+      text = text.substr(1);
+ 
+      // on ajoute les caractères 1 par 1
+      $(element).html(content+next);
+ 
+      // on répète la fonction après le delai
+      setTimeout(function(){
+        caract(element, text, content+next);
+      }, option['delai']);
+    }
+  }
+ 
+  // on configure l'élément par défaut
+	option = option || { 'delai': 50 };
+  // on exécute pour la 1er fois la fonction
+	caract(this, $(this).html(), '');
+ 
+}
+document.getElementById('titre').innerHTML = "Bonjour "+name+" !";
+$("#ecrire").machineEcrire({ 'delai' : 50 });
+</script>	
 
 			
 
