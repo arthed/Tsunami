@@ -34,7 +34,8 @@
 			return vars;
 		}
 
-		var name = $_GET('name');
+		var tmpname = $_GET('name');
+		var name = decodeURI(tmpname);
 </script>
 
 

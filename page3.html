@@ -62,7 +62,8 @@
 			return vars;
 		}
 
-		var name = $_GET('name');
+		var tmpname = $_GET('name');
+		var name = decodeURI(tmpname);
 		var x = document.getElementById("reponses");
 		var y = x.getElementsByClassName("name");
 		var i;
