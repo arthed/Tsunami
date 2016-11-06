@@ -6,17 +6,23 @@ body {
 	display: block;
 	text-align:center;
 	font-size: xx-large;
+	margin-top: 150px;
 }
-#bloc1 li {
+li {
 	list-style: none;
 }
 
 input[type=text] {
     border: 2px solid #a0a0a0;
     border-radius: 4px;
-    width: 30%;
+    width: 80%;
     padding: 12px 20px;
-    margin-top: 25%;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    border: 2px solid #a0a0a0;
+    border-radius: 4px;
+    padding: 15px 20px;
     box-sizing: border-box;
 }
 .bad {
@@ -34,4 +40,15 @@ input[type=text] {
     background-repeat: no-repeat;
     height: 45px;
     cursor: pointer;
+}
+#tapetonnom {
+	display: inline;
+}
+#imgvalide {
+	display: inline;
+}
+#bloc2 {
+	width: 40%;
+    margin: auto;
+    margin-top: 20%;
 }
