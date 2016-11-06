@@ -41,15 +41,10 @@
 			return vars;
 		}
 
-		var name = $_GET('name');
-		var x = document.getElementById("reponses");
-		var y = x.getElementsByClassName("name");
-		var i;
-		for (i = 0; i < y.length; i++) {
-			y[i].innerHTML = name;
-		}
-</script>	
-<script>
+		var tmpname = $_GET('name');
+		var name = decodeURI(tmpname);
+
+
 setTimeout(function(){ 
 	document.getElementById('alert').innerHTML = "<h1>Vous avez reçu une réponse</h1>";
 	window.onclick = function() {document.location.href="page4.html?name="+name;}
