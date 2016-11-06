@@ -19,12 +19,12 @@
 
 
 			
-			<div id="bloc1">
+			<div id="bloc2">
 			<form method="get" action="page2.html?name=?">
-			<ul>
-				<li><input type="text" name="name" id="name" placeholder="Tapez votre nom" onkeyup="valide(this.value);"></li>
-				<li><div id="imgvalide"><input type="submit" class="bad" value="" disabled></div></li>
-			</ul>			
+			
+				<div id="tapetonnom"><input type="text" name="name" id="name" placeholder="Tapez votre nom" onkeyup="valide(this.value);" size="20" maxlength="10"></div>
+				<div id="imgvalide"><input type="submit" class="bad" value="" disabled></div>
+						
 				
 			</form>
 			</div>
@@ -36,8 +36,7 @@
         <script type="text/javascript" src="js/index.js"></script>
 		
 		<script>
-			//recuperation du nom
-			var nom = document.getElementById("name").value;
+			
 			//validation
 			  function valide(carac)
         {       
