@@ -1,6 +1,10 @@
 body {
 	background-color:#003366;
 	color: white;
+	font-family: "Calibri";
+}
+p {
+	font-size: 18px;
 }
 #bloc1 {
 	display: block;
@@ -52,3 +56,26 @@ input[type=submit] {
     margin: auto;
     margin-top: 20%;
 }
+#ecrire {
+	width: 40%;
+	margin-top: 5%;
+	margin-left: 2%;
+	text-align: left;
+	float: left;
+}
+#col-images {
+	width: 20%;
+	margin-top: 5%;
+	margin-left: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
