@@ -64,37 +64,40 @@
 
 <p>Vu l’espace disponible dans le Magasin, j’ai un deuxième projet plus monumental à vous proposer, mais je crains que nous n’ayons les moyens de le réaliser…</p>
 <p>Le temps me faisant défaut ( je pars dans 4 heures ) je vous invite à mettre les lunettes cardboard et le casque audio pour comprendre l’essentiel de mes inspirations pour cette oeuvre, que j’ai décidé d’appeler Tsunami. </p>
-<br />
 <p>Je reste à votre entière disposition pour toutes informations complémentaires…</p>
 <p>Bien à vous,</p>
 <p>Kader</p>
+<button id="repfinal" onclick="goto();">J'ai compris !</button>
 </div>
 
 
 
 <div id="col-images">
 	<ul>
-		<li id="img1"></li>
-		<li id="img2"></li>
-		<li id="img3"></li>
+		<li id="img4"></li>
+		<li id="img5"></li>
 	</ul>
 </div>
-<a href="page5.html">J'ai compris</a>
+
+<script>
+		function goto(){
+			document.location.href="page5.html";
+		}
+		
+</script>
+
 
 
 <script>
 //tps d'apparition des images à régler
 setTimeout(function(){ 
-	document.getElementById('img1').innerHTML = "<img src='img/kader.jpg' alt='Kader'>";
-	}, 3000);
+	document.getElementById('img4').innerHTML = "<img src='img/img4.jpg' alt='Cardboard'>";
+	}, 35000);
 	
 setTimeout(function(){ 
-	document.getElementById('img2').innerHTML = "<img src='img/congo.jpg' alt='Kader'>";
-	}, 15000);
+	document.getElementById('img5').innerHTML = "<img src='img/img5.jpg' alt='cardboard'>";
+	}, 40000);
 
-setTimeout(function(){ 
-	document.getElementById('img3').innerHTML = "<img src='img/oeuvre.jpg' alt='Kader'>";
-	}, 30000);
 </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
 <script>
