@@ -57,14 +57,40 @@ input[type=submit] {
     margin-top: 20%;
 }
 #ecrire {
-	width: 40%;
+	width: 500px;
 	margin-top: 3%;
 	margin-left: 10%;
 	text-align: left;
 	float: left;
 }
+#message {
+	width: 600px;
+	height: 600px;
+	box-sizing: border-box;
+    padding: 4px 6px 4px;
+	border-width: 2px;
+    border-style: none;
+    border-color: white;
+    border-image: initial;
+	border: 1px solid white;
+	float:left;
+	margin-left: 5%;
+}
+#message2 {
+	width: 600px;
+	height: 650px;
+	box-sizing: border-box;
+    padding: 4px 6px 4px;
+	border-width: 2px;
+    border-style: none;
+    border-color: white;
+    border-image: initial;
+	border: 1px solid white;
+	float:left;
+	margin-left: 5%;
+}
 #col-images {
-	width: 20%;
+	width: 18%;
 	margin-top: 2%;
 	margin-left: 60%;
 }
