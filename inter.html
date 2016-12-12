@@ -16,7 +16,6 @@
     <body>
 	<div id="bloc1">
 	<div id="alert">
-		<h1>Message envoyé</h1>
 		<img src="img/loading.gif" alt="patientez">
 	</div>
 	</div>
@@ -44,11 +43,15 @@
 		var tmpname = $_GET('name');
 		var name = decodeURI(tmpname);
 
-
+setTimeout(function(){ 
+	document.getElementById('alert').innerHTML = "<h1>Message envoyé !</h1>";
+	}, 3000);
+	
 setTimeout(function(){ 
 	document.getElementById('alert').innerHTML = "<h1>Vous avez reçu une réponse</h1>"+"<img src='icone.png' alt='tsunami_msg' width='500px'>";
 	window.onclick = function() {document.location.href="page4.html?name="+name;}
-	}, 3000);
+	}, 5000);
+	
 
 </script>
 		
