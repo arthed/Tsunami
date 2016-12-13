@@ -95,75 +95,82 @@ input[type=submit] {
 	margin-left: 60%;
 }
 
-button#rep1 {
-	font-size: 16px;
-	background-color: white;
-    text-align: center;
-    cursor: default;
-    color: black;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: none;
-    border-color: white;
-    border-image: initial;
-	position: center;
-	font-family: "Calibri";
-}
-#choix1 {
-	font-size: 16px;
-	background-color: white;
-    text-align: center;
-    cursor: default;
-    color: black;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: none;
-    border-color: white;
-    border-image: initial;
-	position: center;
-	font-family: "Calibri";	
-}
-#choix2 {
-	font-size: 16px;
-	background-color: white;
-    text-align: center;
-    cursor: default;
-    color: black;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: none;
-    border-color: white;
-    border-image: initial;
-	position: center;
-	font-family: "Calibri";	
-}
-#repfinal {
-	font-size: 16px;
-	background-color: white;
-    text-align: center;
-    cursor: default;
-    color: black;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: none;
-    border-color: white;
-    border-image: initial;
-	position: center;
-	font-family: "Calibri";	
-}
-div#rep1 {
+#rep1 {
+	
+    margin-top: 0%;
+    float: left;
+    
+    text-align: left;
+    padding: 15px;
 	margin-left: 8%;
-	margin-top: 0%;
-	float: left;
-	width: 30%;
+    margin-top: 0%;
+    float: left;
+    width: 30%;
+    text-align: left;
+    
+    padding: 15px;
 	text-align: left;
 	border-color: white;
 	border: 1px solid white;
 	padding: 15px;
+
+}
+#choix1 {
+	font-size: 16px;
+    /* background-color: white; */
+    /* text-align: center; */
+    cursor: default;
+    color: white;
+    /* box-sizing: border-box; */
+    padding: 2px 6px 3px;
+    /* border-width: 2px; */
+    /* border-style: none; */
+    /* border-color: white; */
+    /* border-image: initial; */
+    position: center;
+    font-family: "Calibri";
+	width: 12%
+}
+#choix2 {
+	font-size: 16px;
+    /* background-color: white; */
+    /* text-align: center; */
+    cursor: default;
+    color: white;
+    /* box-sizing: border-box; */
+    padding: 2px 6px 3px;
+    /* border-width: 2px; */
+    /* border-style: none; */
+    /* border-color: white; */
+    /* border-image: initial; */
+    position: center;
+    font-family: "Calibri";
+	width: 12%
+}
+#repfinal {
+	font-size: 16px;
+    width: 25%;
+    /* background-color: white; */
+    text-align: center;
+    cursor: default;
+    /* color: black; */
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    /* border-width: 2px; */
+    /* border-style: none; */
+    /* border-color: white; */
+    /* border-image: initial; */
+    position: center;
+    font-family: "Calibri";
+}
+#pwet1 {
+	    /* margin-left: 8%; */
+    margin-top: 0%;
+    float: left;
+    /* width: 30%; */
+    text-align: left;
+    
+    padding: 15px;
 }
 div#rep2 {
 	margin-left: 60%;
@@ -187,7 +194,28 @@ div#rep2 {
 div#bloc1 {
 	font-size: 18px;
 }
-
+/* clignotement */
+@-webkit-keyframes borderBlink {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: white  
+    }    
+}    
+@keyframes borderBlink {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: white    
+    }    
+}    
+.borderBlink{    
+    border:1px solid white;
+    -webkit-animation: borderBlink 1s step-end infinite;    
+    animation: borderBlink 1s step-end infinite;    
+}
 
 
 
